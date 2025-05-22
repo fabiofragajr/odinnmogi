@@ -1,0 +1,459 @@
+/* Estilos gerais */
+:root {
+  --primary-color: #f0c808; /* Amarelo/dourado do logo Odinn */
+  --secondary-color: #8b4513; /* Marrom dos barris */
+  --accent-color: #c41e3a; /* Vermelho do logo Hop12c */
+  --dark-color: #1a1a1a; /* Preto/escuro para fundos */
+  --light-color: #f5f5f5; /* Cor clara para textos em fundos escuros */
+  --viking-font: 'Norse', 'Cinzel', serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  line-height: 1.6;
+  background-image: url('../img/norse-pattern.png');
+  background-repeat: repeat;
+  background-size: 200px;
+  background-blend-mode: overlay;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--dark-color);
+  padding: 20px 0;
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(240, 200, 8, 0.5));
+}
+
+/* Seção principal */
+.hero {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.9)), url('../img/beer-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/norse-border.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-family: var(--viking-font);
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: var(--light-color);
+}
+
+.location {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Calculadora Hop12c */
+.calculator-section {
+  padding: 60px 0;
+  background-color: rgba(26, 26, 26, 0.9);
+  border-top: 3px solid var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.calculator-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/norse-pattern-light.png');
+  background-size: 100px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.calculator-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.calculator-logo {
+  width: 120px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.calculator-title {
+  flex: 1;
+}
+
+.calculator-title h2 {
+  font-family: var(--viking-font);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.calculator-title p {
+  color: var(--light-color);
+  font-size: 1.1rem;
+}
+
+.calculator-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.form-group input {
+  padding: 12px;
+  border: 2px solid var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(240, 200, 8, 0.3);
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background-color: #e0b800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-results {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.results-title {
+  font-family: var(--viking-font);
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ranking-table th {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ranking-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ranking-table tr:hover {
+  background-color: rgba(240, 200, 8, 0.1);
+}
+
+.ranking-table .best-value {
+  background-color: rgba(240, 200, 8, 0.2);
+}
+
+.ranking-table .best-value td:first-child::before {
+  content: '🏆';
+  margin-right: 8px;
+}
+
+.empty-ranking {
+  text-align: center;
+  padding: 30px;
+  color: var(--light-color);
+  font-style: italic;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--dark-color);
+  padding: 30px 0;
+  text-align: center;
+  border-top: 3px solid var(--primary-color);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  max-width: 120px;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  color: var(--light-color);
+  margin-bottom: 20px;
+}
+
+.footer-text p {
+  margin-bottom: 10px;
+}
+
+.footer-text .tagline {
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--light-color);
+  transform: translateY(-3px);
+}
+
+/* Elementos decorativos nórdicos */
+.norse-divider {
+  width: 100%;
+  height: 30px;
+  background-image: url('../img/norse-divider.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 30px 0;
+  opacity: 0.7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  .calculator-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .calculator-logo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .calculator-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .calculator-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .ranking-table th,
+  .ranking-table td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* RESPONSIVIDADE ADICIONAL PARA SMARTPHONES PEQUENOS */
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .calculator-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ranking-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
